@@ -1,3 +1,7 @@
+library(dplyr)
+library(tidyr)
+library(tibble)
+
 get_matched_df <- function(matchit_obj, orig_df) {
   # takes the output of `matchit()` and the original data_frame inputed in to `matchit()`
   # returns the original data frame with only the matched rows and a new column `pair`
