@@ -1,8 +1,7 @@
 #match_obj: matchit object
-#matched_data : data.frame crée par matchit
 #df_nomiss : data.frame donné à matchit (sans données manquantes)
 
-
+matched_data <- match.data(match_obj)
 summary(matched_data)
 mdf <- data.frame(df_nomiss)
 head(mdf)
@@ -27,4 +26,4 @@ mdf[!is.na(mdf$pairID) & mdf$pairID==2,]
 mdf[!is.na(mdf$pairID) & mdf$pairID==3,]
 mdf[!is.na(mdf$pairID) & mdf$pairID==4,]
 mdf[!is.na(mdf$pairID) & mdf$pairID==5,]
-#View(mdf %>% arrange(pairID)) #It looks like it works.
+#View(mdf %>% arrange(pairID)) 
