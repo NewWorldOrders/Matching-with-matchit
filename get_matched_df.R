@@ -15,13 +15,15 @@ get_matched_df <- function(matchit_obj, orig_df) {
          rowname = as.integer(as.character(rowname)),
          control = as.integer(as.character(control)))
 
-match_list <- match_list %>% 
-  select(rowname = control, pair) %>%
-  bind_rows(match_list[c(1, 3)])
+  match_list <- match_list %>% 
+    select(rowname = control, pair) %>%
+    bind_rows(match_list[c(1, 3)])
 
-matched_df <- orig_df 
-matched_df$rowname <- seq.int(nrow(matched_df))
+  matched_df <- orig_df 
+  matched_df$rowname <- seq.int(nrow(matched_df))
 
-matched_df <- match_list %>%
-  left_join(matched_df, by = "rowname")
+  matched_df <- match_list %>%
+    left_join(matched_df, by = "rowname")
+  
+  matched_df
 }
